@@ -112,6 +112,6 @@ button_container = st.container()
 with button_container:
     if st.button("&#10227;"):
         st.rerun()
-button_css = float_css_helper(width="2.2rem", left="2rem", transition=0)
+button_css = float_css_helper(width="2.2rem", left="2rem", bottom="2rem", transition=0)
 # Float button container
 button_container.float(button_css)
