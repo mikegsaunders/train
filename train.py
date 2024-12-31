@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_float import *
 import os
 import requests
 from datetime import datetime
@@ -85,7 +86,6 @@ def timetable(results, dest):
 
 
 col1, col2, col3, col4 = st.columns(4)
-
 with col1:
     with st.expander("**GAL > EDB**", expanded=True):
         results = ge.json()
@@ -106,3 +106,12 @@ with col4:
         results = tg.json()
         dest = "EDB"
         timetable(results, dest)
+
+float_init()
+button_container = st.container()
+with button_container:
+    if st.button("&#10227;"):
+        st.rerun()
+button_css = float_css_helper(width="2.2rem", left="2rem", transition=0)
+# Float button container
+button_container.float(button_css)
