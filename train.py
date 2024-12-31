@@ -87,22 +87,22 @@ def timetable(results, dest):
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    st.write("**GAL > EDB**")
-    results = ge.json()
-    dest = "EDB"
-    timetable(results, dest)
+    with st.expander("**GAL > EDB**", expanded=True):
+        results = ge.json()
+        dest = "EDB"
+        timetable(results, dest)
 with col2:
-    st.write("**EDB > GAL**")
-    results = eg.json()
-    dest = "TWB"
-    timetable(results, dest)
+    with st.expander("**EDB > GAL**", expanded=True):
+        results = eg.json()
+        dest = "TWB"
+        timetable(results, dest)
 with col3:
-    st.write("**GAL > TWB**")
-    results = gt.json()
-    dest = "TWB"
-    timetable(results, dest)
+    with st.expander("**GAL > TWB**", expanded=True):
+        results = gt.json()
+        dest = "TWB"
+        timetable(results, dest)
 with col4:
-    st.write("**TWB > GAL**")
-    results = tg.json()
-    dest = "EDB"
-    timetable(results, dest)
+    with st.expander("**TWB > GAL**", expanded=True):
+        results = tg.json()
+        dest = "EDB"
+        timetable(results, dest)
